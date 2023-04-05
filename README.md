@@ -14,9 +14,9 @@ Vite is for fast building and serving of a React project, typescript is epic.
 > Incremental adoption... Each primitive can be installed individually so you can adopt them incrementally.
 
 -- [Radix intro](https://www.radix-ui.com/docs/primitives/overview/introduction)
--- [Headless UI]
+-- [Headless UI](https://headlessui.com/)
 
-To use the components and keep a small bundle size, you have to install the
+To use the components and keep a small bundle size in radix, you have to install the
 components individually.
 
     npm install @radix-ui/react-checkbox
