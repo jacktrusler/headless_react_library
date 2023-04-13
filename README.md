@@ -25,3 +25,6 @@ components individually.
 Headless UI comes all at once
 
     npm install @headlessui/react
+
+also install the tiny library `npm install classnames` for the drawer component.
+it's used to conditionally join classnames...
