@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 import { createPortal } from 'react-dom';
-import './Drawer.css';
+import '../_css/Drawer.css';
 
 type DrawerProps = {
   children: JSX.Element | JSX.Element[];
-  isOpen?: boolean;
+  isOpen: boolean;
+  hasTransitionedIn?: boolean;
   className?: string;
   onClose?: () => void;
   position?: 'right' | 'left';
@@ -21,6 +22,7 @@ function createDrawerPortalRoot() {
 export default function Drawer({
   children,
   isOpen,
+  hasTransitionedIn,
   className,
   onClose,
   position = "right",
@@ -59,10 +61,10 @@ export default function Drawer({
   return createPortal(
     <div
       aria-hidden={isOpen ? 'false' : 'true'}
-      className={cn('drawer-container', {
-        open: isOpen,
-        className,
-      })}
+      className={`drawer-container 
+      ${isOpen && hasTransitionedIn ? 'open' : ''} 
+      ${className ? className : ''} 
+      `}
     >
       <div className={cn('drawer', position)} role='right drawer'>
         {children}
