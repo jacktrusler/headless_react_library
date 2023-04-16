@@ -4,14 +4,13 @@ import Drawer from "@/components/vanilla/drawer/Drawer";
 import Multiselect from "@/components/headless_ui/multiselect/Multiselect";
 import "@/components/radix/_css/radix.css";
 import useMountTransition from "./components/_hooks/useMountTransition";
+import FetchRequest from "./components/FetchRequest";
 
 function App() {
   const [openRight, setOpenRight] = useState(false);
   const [openLeft, setOpenLeft] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  const leftTransitionedIn = useMountTransition(openLeft, 350);
-  const rightTransitionedIn = useMountTransition(openRight, 350);
   const hasTransitionedIn = useMountTransition(isMounted, 400);
 
   return (
@@ -29,26 +28,24 @@ function App() {
         <button onClick={() => setOpenRight(!openRight)}>Open right</button>
       </div>
 
-      {(leftTransitionedIn || openLeft) && (
-        <Drawer
-          isOpen={openLeft}
-          hasTransitionedIn={leftTransitionedIn}
-          position='left'
-          onClose={() => setOpenLeft(false)}
-        >
-          <div>lmao</div>
-        </Drawer>
-      )}
-      {(rightTransitionedIn || openRight) && (
-        <Drawer
-          isOpen={openRight}
-          hasTransitionedIn={rightTransitionedIn}
-          position='right'
-          onClose={() => setOpenRight(false)}
-        >
-          <div>xD</div>
-        </Drawer>
-      )}
+      <Drawer
+        isOpen={openLeft}
+        position='left'
+        onClose={() => setOpenLeft(false)}
+      >
+        <div>
+          {openLeft && (
+            <FetchRequest />
+          )}
+        </div>
+      </Drawer>
+      <Drawer
+        isOpen={openRight}
+        position='right'
+        onClose={() => setOpenRight(false)}
+      >
+        <div>xD</div>
+      </Drawer>
 
       <div className="font-semibold pt-2">Hooks</div>
       <div className="flex flex-col items-center w-40">

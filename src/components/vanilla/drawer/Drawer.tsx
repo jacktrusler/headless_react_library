@@ -6,7 +6,6 @@ import '../_css/Drawer.css';
 type DrawerProps = {
   children: JSX.Element | JSX.Element[];
   isOpen: boolean;
-  hasTransitionedIn?: boolean;
   className?: string;
   onClose?: () => void;
   position?: 'right' | 'left';
@@ -22,7 +21,6 @@ function createDrawerPortalRoot() {
 export default function Drawer({
   children,
   isOpen,
-  hasTransitionedIn,
   className,
   onClose,
   position = "right",
@@ -62,7 +60,7 @@ export default function Drawer({
     <div
       aria-hidden={isOpen ? 'false' : 'true'}
       className={`drawer-container 
-      ${isOpen && hasTransitionedIn ? 'open' : ''} 
+      ${isOpen ? 'open' : ''} 
       ${className ? className : ''} 
       `}
     >
