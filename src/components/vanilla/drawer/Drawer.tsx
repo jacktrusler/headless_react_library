@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 import { createPortal } from 'react-dom';
-import '../_css/Drawer.css';
+import '@/components/vanilla/_css/Drawer.css';
 
 type DrawerProps = {
   children: JSX.Element | JSX.Element[];

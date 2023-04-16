@@ -5,6 +5,8 @@ import Multiselect from "@/components/headless_ui/multiselect/Multiselect";
 import "@/components/radix/_css/radix.css";
 import useMountTransition from "./components/_hooks/useMountTransition";
 import FetchRequest from "./components/FetchRequest";
+import DropdownMenu from "./components/vanilla/DropdownMenu";
+import LoadingCircles from "./components/vanilla/LoadingCircles";
 
 function App() {
   const [openRight, setOpenRight] = useState(false);
@@ -46,6 +48,10 @@ function App() {
       >
         <div>xD</div>
       </Drawer>
+
+      <DropdownMenu />
+
+      <LoadingCircles />
 
       <div className="font-semibold pt-2">Hooks</div>
       <div className="flex flex-col items-center w-40">
