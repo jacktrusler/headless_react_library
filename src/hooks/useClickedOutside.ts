@@ -4,8 +4,8 @@ export default function useClickedOutside(initiallyVisible: boolean) {
   const [visible, setVisible] = useState(initiallyVisible);
   const ref: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
-  const handleClickOutside = (event: any) => {
-    if (ref.current && !ref.current.contains(event.target)) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (ref.current && !ref.current.contains(event.target as Node)) {
       setVisible(false);
     }
   };
