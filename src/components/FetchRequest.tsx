@@ -12,7 +12,7 @@ function FetchRequest() {
   }
 
   if (error) {
-    return (<div>An error has occurred: {error.message}</div>)
+    return (<div>An error has occurred</div>)
   }
 
   return (

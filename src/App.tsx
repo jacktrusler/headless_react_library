@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Checkbox from "@/components/radix/checkbox/Checkbox";
-import Drawer from "@/components/vanilla/drawer/Drawer";
-import Multiselect from "@/components/headless_ui/multiselect/Multiselect";
+import Checkbox from "@/components/radix/Checkbox";
+import Drawer from "@/components/vanilla/Drawer";
+import Multiselect from "@/components/headless_ui/Multiselect";
 import "@/components/radix/_css/radix.css";
-import useMountTransition from "./components/_hooks/useMountTransition";
+import useMountTransition from "@/hooks/useMountTransition";
 import FetchRequest from "./components/FetchRequest";
 import DropdownMenu from "./components/vanilla/DropdownMenu";
 import LoadingCircles from "./components/vanilla/LoadingCircles";
