@@ -7,6 +7,21 @@ import useMountTransition from "@/hooks/useMountTransition";
 import FetchRequest from "./components/FetchRequest";
 import DropdownMenu from "./components/vanilla/DropdownMenu";
 import LoadingCircles from "./components/vanilla/LoadingCircles";
+import ComposibleCard from "./components/vanilla/composable_card/ComposibleCard";
+
+export type Product = {
+  id: number,
+  image: string,
+  info: string,
+  action: string,
+}
+
+const product: Product = {
+  id: 1,
+  image: "https://picsum.photos/200/200",
+  info: "Here be some lorem",
+  action: "click on me",
+}
 
 function App() {
   const [openRight, setOpenRight] = useState(false);
@@ -69,6 +84,13 @@ function App() {
           )}
         </div>
       </div>
+
+      <ComposibleCard
+        product={product}
+        image={<ComposibleCard.Image />}
+        info={<ComposibleCard.Info />}
+        action={<ComposibleCard.Button />}
+      />
 
     </div>
   );
